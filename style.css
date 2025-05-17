@@ -1,8 +1,8 @@
 body{
   font-family: 'Cascadia Code', monospace; letter-spacing: 1pt;
+  font-weight: lighter;
   padding: 0; margin: 0;
-}body p{
-  font-size: 11pt;
+  background-color: #eeeeee;
 }
 
 .container {
@@ -18,37 +18,58 @@ body{
   padding: 0; margin: 0;
   color: #2b2b2b; 
   background-color: #eeeeee; /* whatever */
-  height: 100vh;
+  height: 100vh; width: 100%;
   box-shadow: 10px 0 50px rgba(0, 0, 0, 0.15);
-}.sidebar h2{
-  position: relative;
-  padding: 20px; margin: 0; font-size: 24pt;
+}
+
+.sidebar .header{
+  display: grid;
+  grid-template-rows: 100px 1fr;
+  padding: 0; margin: 0;
   background-color: #eeeeee;
-}.sidebar h3{
+}.sidebar .header div{
+  margin: 0; padding: 0;
+}.sidebar .header h2{
+  padding: 0; margin: 0;
+  font-size: 18pt; letter-spacing: 5px;
+}.sidebar .header p{
+  padding: 0; margin: 0;
+  font-size: 10pt; letter-spacing: 2px;
+}.sidebar .header .logo{
+  height: 100px;
+}.sidebar .header .type{
+  height: 240px;
+}
+
+.sidebar h3{
   padding: 0; margin: 14px 0 6px 0;
   text-transform: uppercase;
-  letter-spacing: 3pt; line-height: 18pt; font-size: 18pt; 
+  letter-spacing: 3pt; line-height: 20pt; font-size: 20pt; 
   text-align: left;
 }.sidebar h4{
   padding: 0 20px 0 10px; margin: 0;
   font-weight: lighter;
   letter-spacing: 2pt; line-height: 10pt; font-size: 10pt;
-  border-left: 1px solid #eeeeee;
+  border-left: 1px solid #2b2b2b;
   text-align: justify;
-}.sidebar p{
+}.sidebar li p{
   padding: 0 10px; margin: 0;
   font-size: 9pt;
-  border-left: 1px solid #eeeeee;
+  border-left: 1px solid #2b2b2b;
 }.sidebar ul{
   overflow-y: auto; /* scroll if content too tall */
-  padding: 0; margin: 0;
+  padding: 0; margin: 0;  
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* IE and Edge */
+}.scrollbar ul::-webkit-scrollbar {
+  display: none;                /* Chrome, Safari, Opera */
 }.sidebar li{
   position: relative;
   display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start;
   padding: 20px 20px; margin: 0; margin-top: 4px;
   width: auto; height: auto;
   overflow: hidden;
-  background: #e5e5e5;
+  background: #ebebeb;
 }.sidebar a{
   all: unset;
   cursor: pointer;
@@ -94,9 +115,10 @@ body{
 
 @media (max-width: 800px) {
   .container {
-    grid-template-columns: 50px 1fr; /* shrink sidebar */
+    grid-template-columns: 0px 1fr; /* shrink sidebar */
   }
   .sidebar {
-    width: 50px; /* keep consistent */
+    width: 0px; /* keep consistent */
+    display: hidden;
   }
 }
