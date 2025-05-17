@@ -9,7 +9,50 @@ body{
   display: grid;
   grid-template-columns: 700px 1fr;
   height: 100vh; /* full viewport height */
+  position: relative; /* for absolute child positioning */
+
+  transition: all 0.4s ease;
 }
+
+.container.sidebar-hidden {
+  grid-template-columns: 0 1fr;
+}
+
+.container.sidebar-fullscreen {
+  grid-template-columns: 70vw 0;
+  padding-left: 30vw; width: 100%;
+}
+
+
+.sidebar-toggle-btn {
+  position: absolute;
+  top: 20px;
+  left: 700px; /* default next to sidebar */
+  width: 40px;
+  height: 40px;
+  background: #10a5a3;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 1000;
+  transition: left 0.3s ease;
+}.sidebar-toggle-btn {
+  left: 700px;
+}.container.sidebar-hidden .sidebar-toggle-btn {
+  left: 0;
+  top: 0; bottom: 0; height: 100%;
+  transition: left 0.3s ease;
+}
+
+.sidebar-expand-btn {
+  width: 100%; height: 100%;
+  all: unset;
+  cursor: pointer;
+}.container.sidebar-fullscreen .sidebar-toggle-btn {
+  left: 100%;
+}
+
+
 
 /* +------------+ SIDEBAR +------------+ */
 .sidebar {
@@ -20,11 +63,14 @@ body{
   background-color: #eeeeee; /* whatever */
   height: 100vh; width: 100%;
   box-shadow: 10px 0 50px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+ 
+  transition: all 0.3s ease;
+  z-index: 100;
 }
 
 .sidebar .header{
-  display: grid;
-  grid-template-rows: 100px 1fr;
+  width: 100%;
   padding: 0; margin: 0;
   background-color: #eeeeee;
 }.sidebar .header div{
@@ -99,12 +145,6 @@ body{
   z-index: 1;
 }
 
-
-.spacer {
-  padding: 0; margin: 10px 0;
-  width: 100%;
-  border-top: 1px solid #eeeeee;
-}
 
 /* +------------+ CONTENT +------------+ */
 .main-content {
