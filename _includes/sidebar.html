@@ -18,16 +18,9 @@
         {% for post in site.posts %}
             <a href="{{ post.url | relative_url }}">
                 <li>
-                    <p>
-                        March 17, 2025
-                    </p>
-                    <h3>
-                        {{ post.title }}
-                    </h3>
-                    <!-- <div class="spacer"></div> -->
-                    <h4>
-                        Join me in a productive evening as we explore methods of generating instanced hexagon grids.
-                    </h4>
+                    <p>{{ post.date | date: "%B %d, %Y" }}</p>
+                    <h3>{{ post.title }}</h3>
+                    <h4>{{ post.description }}</h4>
                 </li>
             </a>
         {% endfor %}
