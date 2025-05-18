@@ -200,7 +200,15 @@ body{
   width: 1080px;
 }
 
-.post{
+
+
+.layout-text{
+  margin: 0 auto;
+  width: 1080px;
+  text-align: justify;
+}
+
+.layout-text-image{
   margin: 0 auto;
   width: 1080px;
   text-align: justify;
