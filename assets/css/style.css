@@ -1,1 +1,127 @@
+:root {
+  --color-offwhite: #ededed;
+  --color-text: #333333; */
+  /* --color-accent: #f39c12; */
+}
 
+html, body {
+  font-family: 'Merriweather', serif;
+  color: var(--color-offwhite);
+  background-color: #111;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, code, pre {
+  font-family: 'Cascadia Mono', monospace;
+  font-weight: 100;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+.wrapper,
+.container {
+  transition: all 0.4s ease;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 6rem 15%;
+  box-sizing: border-box;
+  background-color: var(--color-text);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto 1fr; /* cover takes intrinsic width, archive fills rest */
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 1350px) {
+  .wrapper {
+    display: block;
+    padding: 0;
+  }
+
+  .container {
+    aspect-ratio: auto;
+    width: 100%;
+    height: 100vh;
+  }
+}
+
+/* --- ---   C O V E R   --- --- */
+.cover {
+  aspect-ratio: 4 / 5;
+  height: 100%;
+  overflow: hidden;
+  background: #ededed; /* fallback background */
+}
+.cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* fills container without distortion */
+  object-position: center;
+  display: block; /* removes inline gap */
+}
+
+/* --- ---  A R C H I V E --- --- */
+.archive {
+  min-width: 600px;
+  overflow-y: auto;
+  background-color: var(--color-offwhite);
+  color: var(--color-text);
+  box-shadow: -10px 0 50px -10px rgba(0, 0, 0, 0.5);
+}
+.logo {
+  height: 180px;
+  width: auto;
+}
+/* --- ---  P O S T   B U T T O N S  --- --- */
+.post-button {
+  display: block;
+  width: 100%;
+  padding: 1.5rem 3rem 1.5rem 3rem;
+  margin-bottom: 0.5rem;
+  background-color: var(--color-smoky-offwhite);
+  color: var(--color-text);
+  border: none;
+  border-radius: 4px;
+  text-align: left;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #222;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}.post-button h1{
+  font-size: xx-large;
+  letter-spacing: 0.1rem;
+  padding: 1rem 0 1rem 2rem;
+  line-height: 2.2rem;
+}.post-button h3{
+  font-size: smaller;
+  letter-spacing: 0.1rem;
+  font-weight: lighter;
+}.post-button h6 {
+  font-size: smaller;
+  letter-spacing: 0.2rem;
+  font-weight: lighter;
+}
+
+.post-button:hover {
+  background-color: #dddddd;
+}
