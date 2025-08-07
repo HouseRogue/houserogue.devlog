@@ -58,13 +58,15 @@ pre {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius: 12px;
   overflow: hidden;
+  transition: all 0.6s ease;
 
   border: none; /* if you have any border, remove it */
   outline: 1px solid white; /* border color and thickness */
-  outline-offset: -18px; /* positive value pushes the outline outside */
+  outline-offset: -24px; /* positive value pushes the outline outside */
 }
 .container:hover {
-  outline-offset: -12px; /* positive value pushes the outline outside */
+  outline: 1px solid white; /* border color and thickness */
+  outline-offset: -18px; /* positive value pushes the outline outside */
 }
 
 @media (max-width: 1350px) {
