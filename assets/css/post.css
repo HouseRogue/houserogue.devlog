@@ -1,0 +1,108 @@
+:root {
+  --color-offwhite: #ededed;
+  --color-text: #333333;
+  /* --color-accent: #f39c12; */
+}
+
+html,
+body {
+  font-family: "Merriweather", serif;
+  color: var(--color-offwhite);
+  background-color: var(--color-text);
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+code,
+pre {
+  font-family: "Cascadia Mono", monospace;
+  font-weight: 100;
+}
+
+/*--   M A I N   W R A P P E R   ---*/
+.wrapper {
+  max-width: 1200px;
+  width: 100%; /* allows it to shrink on small screens */
+  margin: 36px auto; /* centers it horizontally */
+  box-sizing: border-box; /* ensures padding doesn’t exceed max-width */
+  border-radius: 12px;
+  overflow: hidden;
+}
+/*--   C O V E R   ---*/
+.cover {
+  position: relative;
+  width: 100%;
+  height: 900px;
+  background-color: aquamarine;
+  overflow: hidden;
+}
+.cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* fills container without distortion */
+  object-position: center;
+  display: block; /* removes inline gap */
+}
+.cover-title {
+  position: absolute;
+  box-sizing: border-box; /* ensures padding doesn’t exceed max-width */
+  bottom: 0rem; /* or top: ..., center it if you prefer */
+  padding: 5rem 0;
+  color: var(--color-offwhite);
+  background-color: rgba(18, 18, 18, 0.467);
+}
+.cover-title h1 {
+  padding: 3rem 6rem;
+  margin: 0;
+  font-size: 3.5rem;
+}
+.cover-title h3 {
+  padding: 0rem 2rem;
+  margin: 0;
+  font-size: 1rem;
+}
+
+/*--   C O N T E N T   ---*/
+.content {
+  display: grid;
+  background-color: var(--color-offwhite);
+  color: var(--color-text);
+  font-size: large;
+  padding: 4rem 8rem;
+  font-family: "Segoe UI", sans-serif;
+}
+.content img {
+  position: relative;
+  width: calc(100% + 16rem); /* 6rem left + 6rem right */
+  left: -8rem;
+  height: auto;
+  background-color: aquamarine;
+  overflow: hidden;
+}
+/*--   t a b l e   ---*/
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--color-text);
+  background-color: var(--color-offwhite);
+}
+
+table th,
+table td {
+  border: 1px solid var(--color-text);
+  padding: 0.5rem 1rem;
+  text-align: left;
+}
+
+table thead th {
+  color: var(--color-text);
+}
