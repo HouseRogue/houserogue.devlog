@@ -1,11 +1,12 @@
 :root {
   --color-offwhite: #ededed;
-  --color-text: #333333; */
+  --color-text: #333333;
   /* --color-accent: #f39c12; */
 }
 
-html, body {
-  font-family: 'Merriweather', serif;
+html,
+body {
+  font-family: "Merriweather", serif;
   color: var(--color-offwhite);
   background-color: #111;
   height: 100%;
@@ -14,8 +15,15 @@ html, body {
   box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6, code, pre {
-  font-family: 'Cascadia Mono', monospace;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+code,
+pre {
+  font-family: "Cascadia Mono", monospace;
   font-weight: 100;
 }
 
@@ -24,7 +32,6 @@ h1, h2, h3, h4, h5, h6, code, pre {
   margin: 0;
   box-sizing: border-box;
 }
-
 
 .wrapper,
 .container {
@@ -37,7 +44,7 @@ h1, h2, h3, h4, h5, h6, code, pre {
   align-items: center;
   height: 100vh;
   padding: 6rem 15%;
-  box-sizing: border-box; 
+  box-sizing: border-box;
   background-color: var(--color-text);
 }
 
@@ -50,7 +57,14 @@ h1, h2, h3, h4, h5, h6, code, pre {
   width: auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius: 12px;
-  overflow: hidden; 
+  overflow: hidden;
+
+  border: none; /* if you have any border, remove it */
+  outline: 1px solid white; /* border color and thickness */
+  outline-offset: -18px; /* positive value pushes the outline outside */
+}
+.container:hover {
+  outline-offset: -12px; /* positive value pushes the outline outside */
 }
 
 @media (max-width: 1350px) {
@@ -86,12 +100,26 @@ h1, h2, h3, h4, h5, h6, code, pre {
 .archive {
   min-width: 600px;
   overflow-y: auto;
-  background-color: var(--color-offwhite);
   color: var(--color-text);
   box-shadow: -10px 0 50px -10px rgba(0, 0, 0, 0.5);
+  background: #ededed;
+  background: linear-gradient(
+    32deg,
+    rgba(237, 237, 237, 1) 0%,
+    rgba(237, 237, 237, 1) 64%,
+    rgba(232, 232, 232, 1) 100%
+  );
 }
 .logo {
   height: 180px;
+  width: 100%; /* Ensure it spans the full width */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* optional: vertical centering if needed */
+}
+
+.logo img {
+  max-height: 100%;
   width: auto;
 }
 
@@ -112,16 +140,19 @@ h1, h2, h3, h4, h5, h6, code, pre {
   color: #222;
   cursor: pointer;
   transition: background-color 0.2s ease;
-}.post-button h1{
+}
+.post-button h1 {
   font-size: xx-large;
   letter-spacing: 0.1rem;
   padding: 1rem 0 1rem 2rem;
-  line-height: 2.2rem;  
-}.post-button h3{
+  line-height: 2.2rem;
+}
+.post-button h3 {
   font-size: smaller;
   letter-spacing: 0.1rem;
-  font-weight: lighter;  
-}.post-button h6 {
+  font-weight: lighter;
+}
+.post-button h6 {
   font-size: smaller;
   letter-spacing: 0.2rem;
   font-weight: lighter;
@@ -136,7 +167,7 @@ h1, h2, h3, h4, h5, h6, code, pre {
   left: 38px;
   font-size: 1rem;
   color: var(--color-text);
-  font-family: 'Cascadia Mono', monospace;
+  font-family: "Cascadia Mono", monospace;
   font-weight: lighter;
   user-select: none;
   pointer-events: none; /* don’t interfere with button clicks */
